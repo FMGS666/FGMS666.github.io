@@ -7,7 +7,7 @@ rm -rf /workspace/miniconda3/miniconda.sh;
 alias conda="/workspace/miniconda3/bin/conda";
 # Initializing kaggle user
 mkdir ~/.kaggle;
-echo "{'username':'fmgsf12','key':'d1885b9fd9a3ed92a2a4fd70de6f5a7e'}" > ~/.kaggle/kaggle.json;
+echo '{"username":"fmgsf12","key":"d1885b9fd9a3ed92a2a4fd70de6f5a7e"}' > ~/.kaggle/kaggle.json;
 # Pulling the code from the internet
 mkdir /workspace/blood-vessel-seg;
 cd /workspace/blood-vessel-seg;
