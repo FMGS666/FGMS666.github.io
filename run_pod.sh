@@ -11,9 +11,9 @@ echo "{'username':'fmgsf12','key':'d1885b9fd9a3ed92a2a4fd70de6f5a7e'}" > ~/.kagg
 # Pulling the code from the internet
 mkdir /workspace/blood-vessel-seg;
 cd /workspace/blood-vessel-seg;
-wget https://fmgs666.github.io/FGMS666.github.io/bv-seg.tar.gz;
+wget https://fmgs666.github.io/FGMS666.github.io/bv-seg.zip;
 wget https://fmgs666.github.io/FGMS666.github.io/env.yml;
-tar -xvzf ./bv-seg.tar.gz;
+tar -xvzf ./bv-seg.zip;
 rm bv-seg.tar.gz;
 # Creating folder structure
 mkdir data;
