@@ -14,7 +14,7 @@ cd /workspace/blood-vessel-seg;
 wget https://fmgs666.github.io/FGMS666.github.io/bv-seg.zip;
 wget https://fmgs666.github.io/FGMS666.github.io/env.yml;
 tar -xvzf ./bv-seg.zip;
-rm bv-seg.tar.gz;
+rm bv-seg.zip;
 # Creating folder structure
 mkdir data;
 mkdir data/splits_metadata;
