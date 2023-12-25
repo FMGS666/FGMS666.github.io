@@ -1,3 +1,4 @@
+#!/bin/bash
 # Default arguments
 install_conda=''
 home='/workspace'
@@ -16,9 +17,10 @@ while getopts 'ih:c:u:k:' flag; do
   esac
 done
 
+echo kaggle.json file: \{\"username\":\""$user_name"\"\,\"key\":\""$key"\"\};
 # Installing miniconda
 cd /workspace;
-if [ "$install_conda" = true]; then
+if [ "$install_conda" = true ]; then
     mkdir -p "$conda_home"/miniconda3;
     wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O "$conda_home"/miniconda3/miniconda.sh;
     bash "$conda_home"/miniconda3/miniconda.sh -b -u -p "$conda_home"/miniconda3;
