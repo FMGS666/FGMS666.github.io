@@ -39,12 +39,12 @@ tar -xzf ./bv-seg.zip;
 rm bv-seg.zip;
 
 # Creating folder structure
-mkdir data;
-mkdir data/splits_metadata;
-mkdir data/splits_sampled_volumes;
-mkdir logs;
-mkdir models;
-mkdir models/pretrained;
+mkdir "$home"/blood-vessel-seg/data;
+mkdir "$home"/blood-vessel-seg/data/splits_metadata;
+mkdir "$home"/blood-vessel-seg/data/splits_sampled_volumes;
+mkdir "$home"/blood-vessel-seg/logs;
+mkdir "$home"/blood-vessel-seg/models;
+mkdir "$home"/blood-vessel-seg/models/pretrained;
 
 # Downloading pre-trained weights
 wget -O models/pretrained/model_swinvit.pt https://github.com/Project-MONAI/MONAI-extra-test-data/releases/download/0.8.1/model_swinvit.pt;
@@ -54,5 +54,5 @@ wget -O models/pretrained/model_swinvit.pt https://github.com/Project-MONAI/MONA
 
 # Downloading the data using the kaggle api
 "$conda_home"/miniconda3/bin/conda run -n blood-vessel-seg kaggle competitions download -c blood-vessel-segmentation;
-tar -xzf blood-vessel-segmentation.zip -C "$home"/blood-vessel-seg/data;
+tar -xvzf blood-vessel-segmentation.zip -C "$home"/blood-vessel-seg/data;
 rm blood-vessel-segmentation.zip;
