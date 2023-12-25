@@ -54,6 +54,8 @@ wget -O models/pretrained/model_swinvit.pt https://github.com/Project-MONAI/MONA
 
 # Downloading the data using the kaggle api
 "$conda_home"/miniconda3/bin/conda run -n blood-vessel-seg kaggle competitions download -c blood-vessel-segmentation;
-apt-get install unzip;
+apt update;
+apt upgrade;
+apt install unzip;
 unzip blood-vessel-segmentation.zip -d "$home"/blood-vessel-seg/data;
 rm blood-vessel-segmentation.zip;
