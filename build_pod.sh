@@ -1,7 +1,7 @@
 # Default arguments
 install_conda=''
-home='workspace'
-conda_home='workspace'
+home='/workspace'
+conda_home='/workspace'
 user_name='fmgsf12'
 key=''
 
