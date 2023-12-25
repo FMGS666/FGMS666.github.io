@@ -30,5 +30,3 @@ wget -O models/pretrained/model_swinvit.pt https://github.com/Project-MONAI/MONA
 /workspace/miniconda3/bin/conda run -n blood-vessel-seg kaggle competitions download -c blood-vessel-segmentation;
 unzip blood-vessel-segmentation.zip -d data;
 rm blood-vessel-segmentation.zip;
-# Creating volumes
-#/workspace/miniconda3/bin/conda run -n python3 -m bv-seg sample --n-samples 5 --context-length 100;
