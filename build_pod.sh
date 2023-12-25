@@ -19,7 +19,6 @@ done
 
 echo kaggle.json file: \{\"username\":\""$user_name"\"\,\"key\":\""$key"\"\};
 # Installing miniconda
-cd /workspace;
 if [ "$install_conda" = true ]; then
     mkdir -p "$conda_home"/miniconda3;
     wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O "$conda_home"/miniconda3/miniconda.sh;
