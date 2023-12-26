@@ -51,6 +51,7 @@ wget -O models/pretrained/model_swinvit.pt https://github.com/Project-MONAI/MONA
 
 # Creating conda environment
 "$conda_home"/miniconda3/bin/conda env create -f env.yml;
+"$conda_home"/miniconda3/bin/conda run -n blood-vessel-seg pip install "monai[einops]";
 
 # Downloading the data using the kaggle api
 "$conda_home"/miniconda3/bin/conda run -n blood-vessel-seg kaggle competitions download -c blood-vessel-segmentation;
