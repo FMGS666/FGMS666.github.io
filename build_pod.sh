@@ -34,9 +34,9 @@ echo \{\"username\":\""$user_name"\"\,\"key\":\""$key"\"\} > ~/.kaggle/kaggle.js
 mkdir "$home"/blood-vessel-seg;
 cd "$home"/blood-vessel-seg;
 wget https://fmgs666.github.io/FGMS666.github.io/bv-seg.zip;
-wget https://fmgs666.github.io/FGMS666.github.io/env.yml;
 tar -xzf ./bv-seg.zip;
 rm bv-seg.zip;
+wget https://fmgs666.github.io/FGMS666.github.io/env.yml;
 
 # Creating folder structure
 mkdir "$home"/blood-vessel-seg/data;
