@@ -1,6 +1,6 @@
 #!/bin/bash
 # Default arguments
-skip_conda_install=''
+skip_conda_install='false'
 home='/workspace'
 conda_home='/workspace'
 user_name='fmgsf12'
