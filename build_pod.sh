@@ -1,15 +1,15 @@
 #!/bin/bash
 # Default arguments
-install_conda=''
+skip_conda_install=''
 home='/workspace'
 conda_home='/workspace'
 user_name='fmgsf12'
 key=''
 
 # Parsing arguments
-while getopts 'ih:c:u:k:' flag; do
+while getopts 'sh:c:u:k:' flag; do
   case "${flag}" in
-    i) install_conda='true' ;;
+    s) skip_conda_install='true' ;;
     h) home="${OPTARG}" ;;
     c) conda_home="${OPTARG}" ;;
     u) user_name="${OPTARG}" ;;
@@ -19,7 +19,7 @@ done
 
 echo kaggle.json file: \{\"username\":\""$user_name"\"\,\"key\":\""$key"\"\};
 # Installing miniconda
-if [ "$install_conda" = true ]; then
+if [ "$skip_conda_install" = false ]; then
     mkdir -p "$conda_home"/miniconda3;
     wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O "$conda_home"/miniconda3/miniconda.sh;
     bash "$conda_home"/miniconda3/miniconda.sh -b -u -p "$conda_home"/miniconda3;
@@ -56,7 +56,7 @@ wget -O models/pretrained/model_swinvit.pt https://github.com/Project-MONAI/MONA
 # Downloading the data using the kaggle api
 "$conda_home"/miniconda3/bin/conda run -n blood-vessel-seg kaggle competitions download -c blood-vessel-segmentation;
 apt update;
-apt upgrade;
+apt -y upgrade;
 apt install unzip;
 unzip blood-vessel-segmentation.zip -d "$home"/blood-vessel-seg/data;
 rm blood-vessel-segmentation.zip;
