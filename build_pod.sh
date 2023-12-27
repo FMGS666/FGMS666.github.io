@@ -41,6 +41,7 @@ wget https://fmgs666.github.io/FGMS666.github.io/env.yml;
 # Creating folder structure
 mkdir "$home"/blood-vessel-seg/data;
 mkdir "$home"/blood-vessel-seg/data/splits_metadata;
+mkdir "$home"/blood-vessel-seg/data/splits_metadata/merged_splits;
 mkdir "$home"/blood-vessel-seg/data/splits_sampled_volumes;
 mkdir "$home"/blood-vessel-seg/logs;
 mkdir "$home"/blood-vessel-seg/models;
