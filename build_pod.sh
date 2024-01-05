@@ -5,15 +5,17 @@ home='/workspace'
 conda_home='/workspace'
 user_name='fmgsf12'
 key=''
+write_volumes='false'
 
 # Parsing arguments
-while getopts 'sh:c:u:k:' flag; do
+while getopts 'sh:c:u:k:wt' flag; do
   case "${flag}" in
     s) skip_conda_install='true' ;;
     h) home="${OPTARG}" ;;
     c) conda_home="${OPTARG}" ;;
     u) user_name="${OPTARG}" ;;
     k) key="${OPTARG}" ;;
+    w) write_volumes='true' ;;
   esac
 done
 
@@ -62,5 +64,7 @@ apt -y upgrade;
 apt install unzip nano;
 unzip blood-vessel-segmentation.zip -d "$home"/blood-vessel-seg/data;
 rm blood-vessel-segmentation.zip;
-"$conda_home"/miniconda3/bin/conda init;
+if [ "$write_volumes" = true ]; then
+  "$conda_home"/miniconda3/bin/conda run -n blood-vessel-seg python3 -m bv-seg write-volumes;
+fi
 bash;
